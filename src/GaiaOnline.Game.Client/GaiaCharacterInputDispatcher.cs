@@ -12,7 +12,7 @@ namespace GaiaOnline
 		/// A unity serialization hack to allow us to serialize to the inspector custom UnityEvent types.
 		/// </summary>
 		[Serializable]
-		private class OnDirectionChangedEvent : UnityEvent<Vector2> { }
+		private class OnVector2ChangedEvent : UnityEvent<Vector2> { }
 
 		/// <summary>
 		/// Event dispatched when movement starts.
@@ -30,7 +30,13 @@ namespace GaiaOnline
 		/// Event dispatched when the direction changes.
 		/// </summary>
 		[SerializeField]
-		private OnDirectionChangedEvent OnDirectionChanged;
+		private OnVector2ChangedEvent OnDirectionChanged;
+
+		/// <summary>
+		/// Event dispatched when the rotation changes.
+		/// </summary>
+		[SerializeField]
+		private OnVector2ChangedEvent OnRotationChanged;
 
 		//TODO: Look into IL generator/rewritter/weaver to dispatch change events. IPropertyNotify or whatever is too ugly to use
 		//locally cached movement state
@@ -56,12 +62,16 @@ namespace GaiaOnline
 				isMoving = !isMoving;
 			}
 
-			//Now we need to set the direction if it's dirrection
-			if (direction != input)
-			{
-				OnDirectionChanged?.Invoke(input);
+			//We want the direction to be equivalent to the input but also relative to the rotation of the avatar.
+			Vector3 rot = transform.rotation.eulerAngles;
+			Vector2 dir = Quaternion.Euler(rot.x, -rot.z, rot.y) * input;
 
-				direction = input;
+			//Now we need to set the direction if it's dirrection
+			if (direction != dir)
+			{
+				OnDirectionChanged?.Invoke(dir);
+
+				direction = dir;
 			}
 		}
 	}

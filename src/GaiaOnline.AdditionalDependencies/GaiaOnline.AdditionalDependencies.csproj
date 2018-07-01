@@ -15,10 +15,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GladBehaviour.Editor" Version="1.0.9" />
-    <PackageReference Include="SceneJect.Autofac" Version="2.0.5" />
-    <PackageReference Include="SceneJect.Editor" Version="2.0.5" />
-    <PackageReference Include="SceneJect.Metadata" Version="2.0.5" />
+    <PackageReference Include="SceneJect.Autofac" Version="2.0.6" />
+    <PackageReference Include="SceneJect.Editor" Version="3.0.8" />
+    <PackageReference Include="SceneJect.Metadata" Version="3.0.8" />
   </ItemGroup>
 
   <ItemGroup>

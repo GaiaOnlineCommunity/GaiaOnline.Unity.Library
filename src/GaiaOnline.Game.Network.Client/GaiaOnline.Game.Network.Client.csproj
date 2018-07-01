@@ -15,17 +15,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="HaloLive.Authentication.Client" Version="2.0.1" />
-    <PackageReference Include="HaloLive.NameResolution.Client" Version="2.0.1" />
-    <PackageReference Include="HaloLive.Network.Common" Version="2.0.1" />
-    <PackageReference Include="SceneJect.Common" Version="2.0.5" />
-    <PackageReference Include="SceneJect.Metadata" Version="2.0.5" />
-    <PackageReference Include="TypeSafe.Http.Net.Api" Version="2.2.5" />
-    <PackageReference Include="TypeSafe.Http.Net.Core" Version="2.2.5" />
-    <PackageReference Include="TypeSafe.Http.Net.HttpClient" Version="2.2.5" />
-    <PackageReference Include="TypeSafe.Http.Net.Serializer.DotNetXml" Version="2.2.5" />
-    <PackageReference Include="TypeSafe.Http.Net.Serializer.JsonNET" Version="2.2.5" />
-    <PackageReference Include="Unitysync.Async" Version="1.0.4" />
+    <PackageReference Include="SceneJect.Common" Version="3.0.8" />
+    <PackageReference Include="SceneJect.Metadata" Version="3.0.8" />
+    <PackageReference Include="TypeSafe.Http.Net.Api" Version="2.2.11" />
+    <PackageReference Include="TypeSafe.Http.Net.Core" Version="2.2.11" />
+    <PackageReference Include="TypeSafe.Http.Net.HttpClient" Version="2.2.11" />
+    <PackageReference Include="TypeSafe.Http.Net.Serializer.DotNetXml" Version="2.2.11" />
+    <PackageReference Include="TypeSafe.Http.Net.Serializer.JsonNET" Version="2.2.11" />
+    <PackageReference Include="Unitysync.Async" Version="1.0.12" />
   </ItemGroup>
 
   <ItemGroup>
@@ -60,8 +57,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GaiaOnline.Game.Common\GaiaOnline.Game.Common.csproj" />
-    <ProjectReference Include="..\GaiaOnline.GameServerList.Models\GaiaOnline.GameServerList.Models.csproj" />
     <ProjectReference Include="..\GaiaOnline.Network.Client\GaiaOnline.Network.Client.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="NetworkServices\" />
   </ItemGroup>
 
 </Project>

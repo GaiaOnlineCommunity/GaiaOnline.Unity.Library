@@ -17,8 +17,8 @@ namespace GaiaOnline
 	[Injectee]
 	public sealed class AvatarDisplayLoader : MonoBehaviour, IInitializable
 	{
-		//TODO: Remove this, it's for testing.
-		public string UserName;
+		[Inject]
+		private IAvatarNameQueryService NameQueryService { get; }
 
 		/// <summary>
 		/// The client for querying Gaia.
@@ -62,7 +62,8 @@ namespace GaiaOnline
 			//We can't really recover from this but we can log
 			try
 			{
-				QueryClient.GetAvatarFromUsername(UserName)
+				NameQueryService.GetNameById(0)
+					.UnityAsyncContinueWith(this, QueryClient.GetAvatarFromUsername)
 					.UnityAsyncContinueWith(this, GetAvatarImage)
 					.UnityAsyncContinueWith(this, StartAvatarRendererConfigurationCoroutine);
 			}

@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GladBehaviour.Common;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace GaiaOnline
 {
-	public sealed class InitializationEngine : GladMonoBehaviour
+	public sealed class InitializationEngine : MonoBehaviour
 	{
 		/// <summary>
 		/// The list of <see cref="IInitializable"/> listeners.
 		/// </summary>
 		[SerializeField]
-		private List<IInitializable> InitializationList { get; }
+		private UnityEvent InitializationList;
 
 		//TODO: How should we allow configuration?
 		[SerializeField]
@@ -25,8 +25,7 @@ namespace GaiaOnline
 			//TODO: What about reiniaitlaize?
 			if (Initialize)
 			{
-				foreach (IInitializable i in InitializationList)
-					i.Initialize();
+				InitializationList?.Invoke();
 
 				Initialize = false;
 			}
