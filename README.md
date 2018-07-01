@@ -10,15 +10,8 @@ Library for interacting with the GaiaOnline API, endpoints and content inside of
 
 It relies on [TypeSafe.Http.Net](https://github.com/HelloKitty/TypeSafe.Http.Net) for the HTTP networking required for querying the GaiaOnline API. This is done in such a way that does not differ from browsers nor other addons like BetterGaia.
 
-It also relies on some backend libraries that I've been maintaining over a couple of months oddly called [HaloLive](https://github.com/halolive) which provided a couple client interfaces, models and productive extensions.
-
 ## Information
 
-[GameServer List Sevice](https://github.com/GaiaOnlineCommunity/GaiaOnline.Unity.Library/tree/master/src/GaiaOnline.GameServerList.Service): is an ASP Core application that services a list of gameservers.
-
-[Authentication Service](https://github.com/GaiaOnlineCommunity/GaiaOnline.Unity.Library/tree/master/src/GaiaOnline.Authentication.Service): is an ASP Core service that mocks an OAuth accesstoken/passwordgrant auth service. Can be replaced with a real OAuth service in the future.
-
-To get the endpoints for these services the client's should query the "glue" service, so to speak, that points them in the right direction. Located here: [Service Discovery Service](https://github.com/GaiaOnlineCommunity/HaloLive.ServiceDiscovery.Service)
 
 ## Setup
 
@@ -26,8 +19,6 @@ You will need:
 
 * Visual Studio 2017
 * Unity2017 with .NET 4.6 enabled
-* Add Nuget feed: https://www.myget.org/F/hellokitty/api/v3/index.json
-* Add Nuget feed: https://www.myget.org/F/halolive/api/v3/index.json
 
 ## Builds
 
