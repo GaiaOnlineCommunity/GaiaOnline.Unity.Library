@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
@@ -31,7 +33,7 @@ namespace GaiaOnline
 					.Create()
 					.RegisterDefaultSerializers()
 					.RegisterDotNetXmlSerializer()
-					.RegisterDotNetHttpClient(GaiaOnlineQueryBaseUrl)
+					.RegisterDotNetHttpClient(GaiaOnlineQueryBaseUrl, new HttpClientHandler(){ Proxy = new WebProxy("localhost", 8888) })
 					.Build())
 				.As<IGaiaOnlineQueryClient>()
 				.SingleInstance();
@@ -40,7 +42,7 @@ namespace GaiaOnline
 					.Create()
 					.RegisterDefaultSerializers()
 					.RegisterUnityTexture2DSerializer()
-					.RegisterDotNetHttpClient(GaiaOnlineImageCDNBaseUrl)
+					.RegisterDotNetHttpClient(GaiaOnlineImageCDNBaseUrl, new HttpClientHandler() { Proxy = new WebProxy("localhost", 8888) })
 					.Build())
 				.As<IGaiaOnlineImageCDNClient>()
 				.SingleInstance();
