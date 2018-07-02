@@ -17,7 +17,7 @@
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="11.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="TypeSafe.Http.Net.Api" Version="2.2.11" />
+    <PackageReference Include="TypeSafe.Http.Net.Api" Version="2.2.16" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.5'">
