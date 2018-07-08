@@ -18,7 +18,7 @@ It relies on [TypeSafe.Http.Net](https://github.com/HelloKitty/TypeSafe.Http.Net
 You will need:
 
 * Visual Studio 2017
-* Unity2017 with .NET 4.6 enabled
+* Unity2018 with .NET/Mono 4.x and Netstandard 2.0 enabled
 
 ## Builds
 
