@@ -64,7 +64,7 @@ namespace GaiaOnline
 			{
 				QueryClient.GetAvatarFromUsername(UserName)
 					.UnityAsyncContinueWith(this, GetAvatarImage)
-					.UnityAsyncContinueWith(this, StartAvatarRendererConfigurationCoroutine);
+					.UnityAsyncContinueWith(this, t => StartAvatarRendererConfigurationCoroutine(t));
 			}
 			catch (Exception e)
 			{

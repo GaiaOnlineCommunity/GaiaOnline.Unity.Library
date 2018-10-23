@@ -15,15 +15,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SceneJect.Common" Version="2.0.3" />
-    <PackageReference Include="SceneJect.Metadata" Version="2.0.3" />
-    <PackageReference Include="TypeSafe.Http.Net.Api" Version="2.2.4" />
-    <PackageReference Include="TypeSafe.Http.Net.Core" Version="2.2.4" />
-    <PackageReference Include="TypeSafe.Http.Net.HttpClient" Version="2.2.4" />
-    <PackageReference Include="TypeSafe.Http.Net.Serializer.DotNetXml" Version="2.2.4" />
+    <PackageReference Include="SceneJect.Common" Version="3.0.11" />
+    <PackageReference Include="SceneJect.Metadata" Version="3.0.11" />
+    <PackageReference Include="TypeSafe.Http.Net.Api" Version="2.2.17" />
+    <PackageReference Include="TypeSafe.Http.Net.Core" Version="2.2.17" />
+    <PackageReference Include="TypeSafe.Http.Net.HttpClient" Version="2.2.17" />
+    <PackageReference Include="TypeSafe.Http.Net.Serializer.DotNetXml" Version="2.2.17" />
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="System.Net.Http">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Net.Http.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\lib\Unity\UnityEngine.dll</HintPath>
     </Reference>
