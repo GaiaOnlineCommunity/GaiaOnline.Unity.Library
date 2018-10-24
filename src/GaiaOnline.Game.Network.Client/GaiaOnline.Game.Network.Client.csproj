@@ -15,8 +15,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SceneJect.Common" Version="3.0.8" />
-    <PackageReference Include="SceneJect.Metadata" Version="3.0.8" />
+    <Compile Remove="NetworkServices\**" />
+    <EmbeddedResource Remove="NetworkServices\**" />
+    <None Remove="NetworkServices\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SceneJect.Common" Version="3.0.28" />
+    <PackageReference Include="SceneJect.Metadata" Version="3.0.28" />
     <PackageReference Include="TypeSafe.Http.Net.Api" Version="2.2.16" />
     <PackageReference Include="TypeSafe.Http.Net.Core" Version="2.2.16" />
     <PackageReference Include="TypeSafe.Http.Net.HttpClient" Version="2.2.16" />
@@ -58,10 +64,6 @@
   <ItemGroup>
     <ProjectReference Include="..\GaiaOnline.Game.Common\GaiaOnline.Game.Common.csproj" />
     <ProjectReference Include="..\GaiaOnline.Network.Client\GaiaOnline.Network.Client.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="NetworkServices\" />
   </ItemGroup>
 
 </Project>
