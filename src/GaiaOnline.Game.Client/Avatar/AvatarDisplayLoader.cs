@@ -17,8 +17,8 @@ namespace GaiaOnline
 	[Injectee]
 	public sealed class AvatarDisplayLoader : MonoBehaviour, IInitializable
 	{
-		//TODO: Remove this, it's for testing.
-		public string UserName;
+		[Inject]
+		private IAvatarNameQueryService NameQueryService { get; }
 
 		/// <summary>
 		/// The client for querying Gaia.
@@ -62,9 +62,10 @@ namespace GaiaOnline
 			//We can't really recover from this but we can log
 			try
 			{
-				QueryClient.GetAvatarFromUsername(UserName)
+				NameQueryService.GetNameById(0)
+					.UnityAsyncContinueWith(this, QueryClient.GetAvatarFromUsername)
 					.UnityAsyncContinueWith(this, GetAvatarImage)
-					.UnityAsyncContinueWith(this, t => StartAvatarRendererConfigurationCoroutine(t));
+					.UnityAsyncContinueWith(this, tex => StartAvatarRendererConfigurationCoroutine(tex));
 			}
 			catch (Exception e)
 			{
@@ -74,7 +75,7 @@ namespace GaiaOnline
 			}
 		}
 
-		private void StartAvatarRendererConfigurationCoroutine([NotNull] Texture2D texture)
+		private void StartAvatarRendererConfigurationCoroutine(Texture2D texture)
 		{
 			if (texture == null) throw new ArgumentNullException(nameof(texture));
 
@@ -83,7 +84,7 @@ namespace GaiaOnline
 			StartCoroutine(SetAvatarForRenderers(texture));
 		}
 
-		private async Task<Texture2D> GetAvatarImage([NotNull] UserAvatarQueryResponse response)
+		private async Task<Texture2D> GetAvatarImage(UserAvatarQueryResponse response)
 		{
 			if (response == null) throw new ArgumentNullException(nameof(response));
 			if (String.IsNullOrWhiteSpace(response.AvatarRelativeUrlPath))
@@ -99,7 +100,7 @@ namespace GaiaOnline
 			return (await ImageClient.GetAvatarImage(stripUrl)).Texture.Value;
 		}
 
-		private IEnumerator SetAvatarForRenderers([NotNull] Texture2D texture)
+		private IEnumerator SetAvatarForRenderers(Texture2D texture)
 		{
 			if (texture == null) throw new ArgumentNullException(nameof(texture));
 

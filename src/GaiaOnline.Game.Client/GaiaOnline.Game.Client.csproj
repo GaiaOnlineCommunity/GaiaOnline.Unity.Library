@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net46;netstandard2.0</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>https://github.com/HelloKitty</Authors>
     <Company>https://github.com/HelloKitty</Company>
     <Product></Product>
@@ -15,8 +15,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GladBehaviour.Common" Version="1.0.9" />
-    <PackageReference Include="SceneJect.Metadata" Version="3.0.28" />
+    <PackageReference Include="SceneJect.Metadata" Version="3.0.8" />
     <PackageReference Include="Unitysync.Async" Version="1.0.13" />
   </ItemGroup>
 
@@ -29,10 +28,6 @@
     <Reference Include="UnityEngine">
       <HintPath>..\..\lib\Unity\UnityEngine.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="IoC\" />
   </ItemGroup>
 
 </Project>

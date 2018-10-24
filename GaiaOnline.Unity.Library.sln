@@ -1,19 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.26730.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{82223BC2-FD46-45B7-8714-A1BBB6FACC0E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{FCFAE99C-C28A-44B7-A7BE-F9D5481C35B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaiaOnline.Game.Client", "src\GaiaOnline.Game.Client\GaiaOnline.Game.Client.csproj", "{6F943C82-97BE-42FA-8F60-E39C3C8CDCBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.Game.Client", "src\GaiaOnline.Game.Client\GaiaOnline.Game.Client.csproj", "{6F943C82-97BE-42FA-8F60-E39C3C8CDCBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaiaOnline.Game.Common", "src\GaiaOnline.Game.Common\GaiaOnline.Game.Common.csproj", "{EEBD3AB3-AFB6-478C-8B18-42D5EA5E2251}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.Game.Common", "src\GaiaOnline.Game.Common\GaiaOnline.Game.Common.csproj", "{EEBD3AB3-AFB6-478C-8B18-42D5EA5E2251}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaiaOnline.Game.Network.Client", "src\GaiaOnline.Game.Network.Client\GaiaOnline.Game.Network.Client.csproj", "{1EBDE396-D132-4C66-BD97-F363E44FE351}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.Game.Network.Client", "src\GaiaOnline.Game.Network.Client\GaiaOnline.Game.Network.Client.csproj", "{1EBDE396-D132-4C66-BD97-F363E44FE351}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.AdditionalDependencies", "src\GaiaOnline.AdditionalDependencies\GaiaOnline.AdditionalDependencies.csproj", "{4094B729-4488-45FC-A03D-67C1BA4AF765}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{D3964BC6-DF3A-456B-853F-D0B69096D23C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.Network.Client", "src\GaiaOnline.Network.Client\GaiaOnline.Network.Client.csproj", "{F70E01AF-9CF9-4C6F-9C31-46784A42DF40}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GaiaOnline.Models.Common", "src\GaiaOnline.Models.Common\GaiaOnline.Models.Common.csproj", "{62508B2E-7378-43E2-AB95-09417705C0A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Network", "Network", "{37D385B3-B129-4C42-9C0D-B13BB83FF549}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +45,14 @@ Global
 		{4094B729-4488-45FC-A03D-67C1BA4AF765}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4094B729-4488-45FC-A03D-67C1BA4AF765}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4094B729-4488-45FC-A03D-67C1BA4AF765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F70E01AF-9CF9-4C6F-9C31-46784A42DF40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F70E01AF-9CF9-4C6F-9C31-46784A42DF40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F70E01AF-9CF9-4C6F-9C31-46784A42DF40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F70E01AF-9CF9-4C6F-9C31-46784A42DF40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62508B2E-7378-43E2-AB95-09417705C0A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62508B2E-7378-43E2-AB95-09417705C0A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62508B2E-7378-43E2-AB95-09417705C0A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62508B2E-7378-43E2-AB95-09417705C0A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,7 +60,14 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{6F943C82-97BE-42FA-8F60-E39C3C8CDCBD} = {82223BC2-FD46-45B7-8714-A1BBB6FACC0E}
 		{EEBD3AB3-AFB6-478C-8B18-42D5EA5E2251} = {82223BC2-FD46-45B7-8714-A1BBB6FACC0E}
-		{1EBDE396-D132-4C66-BD97-F363E44FE351} = {82223BC2-FD46-45B7-8714-A1BBB6FACC0E}
+		{1EBDE396-D132-4C66-BD97-F363E44FE351} = {37D385B3-B129-4C42-9C0D-B13BB83FF549}
 		{4094B729-4488-45FC-A03D-67C1BA4AF765} = {82223BC2-FD46-45B7-8714-A1BBB6FACC0E}
+		{D3964BC6-DF3A-456B-853F-D0B69096D23C} = {82223BC2-FD46-45B7-8714-A1BBB6FACC0E}
+		{F70E01AF-9CF9-4C6F-9C31-46784A42DF40} = {37D385B3-B129-4C42-9C0D-B13BB83FF549}
+		{62508B2E-7378-43E2-AB95-09417705C0A0} = {D3964BC6-DF3A-456B-853F-D0B69096D23C}
+		{37D385B3-B129-4C42-9C0D-B13BB83FF549} = {82223BC2-FD46-45B7-8714-A1BBB6FACC0E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC3687F9-5B94-46EB-AB27-C24E4361100F}
 	EndGlobalSection
 EndGlobal

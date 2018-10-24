@@ -6,10 +6,10 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using JetBrains.Annotations;
 
 namespace GaiaOnline
 {
+	//TODO: Add HaloLive response interfaces
 	//TODO: They use different encoding for XML than the default XmlSerializer
 	//profiles?mode=lookup&avatar_username=
 	//Example: http://gaiaonline.com/profiles?mode=lookup&avatar_username=lm_a_kitty_cat
@@ -19,7 +19,6 @@ namespace GaiaOnline
 	/// Contains a manually encoded HTTP response code. This indicates the state of the model and the status of the response.
 	/// It does not match the actual HTTP response code sent back, which is always 200.
 	/// </summary>
-	[Serializable]
 	[XmlType("response")]
 	public sealed class UserAvatarQueryResponse
 	{
@@ -55,7 +54,7 @@ namespace GaiaOnline
 		[XmlAttribute("userId")]
 		public string UserId { get; set; } //must be public setter for the XmlSerializer. May switch to DataContract instead.
 
-		public UserAvatarQueryResponse(int responseStatusCode, string avatarRelativeUrlPath, [NotNull] string userId)
+		public UserAvatarQueryResponse(int responseStatusCode, string avatarRelativeUrlPath, string userId)
 		{
 			if (string.IsNullOrWhiteSpace(avatarRelativeUrlPath)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(avatarRelativeUrlPath));
 			if (string.IsNullOrWhiteSpace(userId)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(userId));
