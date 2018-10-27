@@ -15,11 +15,8 @@ namespace GaiaOnline
 	/// Component that can load the display for an avatar.
 	/// </summary>
 	[Injectee]
-	public sealed class AvatarDisplayLoader : MonoBehaviour, IInitializable
+	public class AvatarDisplayLoader : MonoBehaviour, IInitializable
 	{
-		[Inject]
-		private IAvatarNameQueryService NameQueryService { get; }
-
 		/// <summary>
 		/// The client for querying Gaia.
 		/// </summary>
@@ -37,13 +34,19 @@ namespace GaiaOnline
 		[Tooltip("List of renderers to set the loaded Avatar image to.")]
 		private Renderer[] AvatarRenderers;
 
+		[SerializeField]
+		private bool InitializeOnStart;
+
 		private void Start()
 		{
 			if(AvatarRenderers == null)
 				throw new InvalidOperationException($"The {nameof(AvatarRenderers)} cannot be null.");
 
-			if (!AvatarRenderers.Any())
+			if(!AvatarRenderers.Any())
 				throw new InvalidOperationException($"The {nameof(AvatarRenderers)} cannot be empty.");
+
+			if(InitializeOnStart)
+				Initialize();
 		}
 
 		/// <inheritdoc />
@@ -62,7 +65,7 @@ namespace GaiaOnline
 			//We can't really recover from this but we can log
 			try
 			{
-				NameQueryService.GetNameById(0)
+				LoadAvatarName()
 					.UnityAsyncContinueWith(this, QueryClient.GetAvatarFromUsername)
 					.UnityAsyncContinueWith(this, GetAvatarImage)
 					.UnityAsyncContinueWith(this, tex => StartAvatarRendererConfigurationCoroutine(tex));
@@ -109,6 +112,11 @@ namespace GaiaOnline
 				r.material.mainTexture = texture;
 				yield return null;
 			}
+		}
+
+		public virtual Task<string> LoadAvatarName()
+		{
+			return Task.FromResult("HelloKittyGithub");
 		}
 	}
 }
