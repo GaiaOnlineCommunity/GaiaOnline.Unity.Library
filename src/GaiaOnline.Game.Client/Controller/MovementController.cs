@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GaiaOnline
 {
-	public abstract class MovementController
+	public abstract class MovementController : MonoBehaviour
 	{
 		/// <summary>
 		/// Returns the current input direction.
