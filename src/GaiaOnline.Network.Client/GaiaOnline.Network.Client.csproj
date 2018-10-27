@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>https://github.com/HelloKitty</Authors>
     <Company>https://github.com/HelloKitty</Company>
     <Product></Product>
@@ -17,7 +17,7 @@
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="11.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="SceneJect.Common" Version="3.0.28" />
+    <PackageReference Include="SceneJect.Common" Version="3.0.29" />
     <PackageReference Include="TypeSafe.Http.Net.Api" Version="2.2.17" />
     <PackageReference Include="TypeSafe.Http.Net.Core" Version="2.2.17" />
     <PackageReference Include="TypeSafe.Http.Net.HttpClient" Version="2.2.17" />

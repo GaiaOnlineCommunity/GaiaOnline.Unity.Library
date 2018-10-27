@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>https://github.com/HelloKitty</Authors>
     <Company>https://github.com/HelloKitty</Company>
     <Product></Product>
@@ -15,8 +15,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SceneJect.Metadata" Version="3.0.28" />
-    <PackageReference Include="Unitysync.Async" Version="1.0.13" />
+    <PackageReference Include="SceneJect.Metadata" Version="3.0.29" />
+    <PackageReference Include="Unitysync.Async" Version="1.0.14" />
   </ItemGroup>
 
   <ItemGroup>
