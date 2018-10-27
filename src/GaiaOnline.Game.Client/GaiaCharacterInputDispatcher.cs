@@ -45,11 +45,14 @@ namespace GaiaOnline
 		//locally cached direction
 		private Vector2 direction;
 
+		[SerializeField]
+		private MovementController Controller;
+
 		//Must do in update, not fixed update
 		void Update()
 		{
 			//TODO: Extract this into an input controller. We should only dispatch here
-			Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+			Vector2 input = Controller.GetInputDirection();
 
 			//If our movement state isn't matching the input then negate
 			if (isMoving != input.magnitude > 0.0f)
